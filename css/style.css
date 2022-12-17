@@ -1,0 +1,276 @@
+/********** Template CSS **********/
+:root {
+  --primary: #fa9000;
+  --light: #35353b;
+  --dark: #28282d;
+}
+
+@font-face {
+  font-family: "AachenBT Roman";
+  src: url("../font/aachen_bt.ttf") format("truetype");
+}
+body {
+  margin: 0;
+  font-family: "AachenBT Roman", sans-serif;
+  color: #fff;
+  background-color: #18171e;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+h1 {
+  font-size: 67px;
+  color: var(--primary) !important;
+}
+
+h2 {
+  color: #fff;
+  font-size: 50px;
+}
+
+h3 {
+  font-size: 29px;
+  color: var(--primary) !important;
+}
+
+h5 {
+  font-size: 22px;
+  color: var(--primary) !important;
+}
+
+p {
+  font-size: 33px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/*** Button ***/
+.btn {
+  background: var(--primary) !important;
+  text-transform: capitalize;
+  transition: 0.5s;
+  color: var(--dark);
+  font-size: 24px;
+}
+
+/** hero **/
+.hero_header {
+  background-image: url(../img/bg-hero.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+.hero_header:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--dark);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* Section Menu */
+.section_menu {
+  padding: 150px 0;
+}
+
+.section_menu h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+
+/* Section About */
+.section_about {
+  padding: 120px 0;
+}
+
+/* Section Quality */
+.section_quality {
+  position: relative;
+  padding: 850px 0;
+  background-image: url(../img/shape.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.section_quality:before {
+  content: "";
+  position: absolute;
+  width: 525px;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  background-image: url(../img/quality_img02.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.section_quality:after {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 100%;
+  right: 0;
+  top: -100px;
+  background-image: url(../img/quality_img01.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.section_quality .block_text {
+  position: absolute;
+  top: 15%;
+  max-width: 500px;
+  margin-left: 75px;
+}
+
+.section_quality .block_image img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* Section Gallery */
+.section_gallery {
+  padding: 150px 0;
+}
+
+.section_gallery h2 {
+  margin-bottom: 80px;
+}
+
+.section_gallery img {
+  width: -webkit-fill-available;
+}
+
+/* Section Enjoy Food */
+.section_enjoy_food {
+  padding: 200px 0;
+  background-image: url(../img/enjoy_our_food_bg.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Section Contact */
+.section_contact {
+  padding-bottom: 200px;
+}
+
+.icon_contact {
+  width: 50px;
+  height: 50px;
+  background: var(--primary);
+  border-radius: 50%;
+}
+
+/* Section Feed */
+.section_feed {
+  position: relative;
+  background: var(--primary);
+  padding: 100px 0;
+}
+
+.section_feed img {
+  top: -25%;
+  left: -2%;
+  height: 640px;
+}
+
+.section_feed p {
+  margin-bottom: 0;
+}
+
+/* Footer */
+.footer_section {
+  padding: 75px 100px;
+  background-color: #313238;
+  text-align: center;
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 40px;
+}
+
+ul.menu_footer {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+  padding: 0;
+}
+
+ul.menu_footer li {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footer_section .footer_social {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer_section .footer_social a {
+  display: flex;
+  align-items: center;
+  color: #222831;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 100%;
+  margin: 0 5px;
+  font-size: 18px;
+  padding: 0 8px;
+}
+
+/**/
+@media (min-width: 992px) {
+  .navbar-dark {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: transparent !important;
+  }
+}
+
+/**/
+
+.section_enjoy_food .card {
+  max-width: 735px;
+  margin: auto;
+  background: transparent;
+  padding: 60px;
+  border: 10px solid;
+  border-radius: 0;
+}
