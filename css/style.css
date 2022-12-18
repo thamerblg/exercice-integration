@@ -64,10 +64,47 @@ p {
   text-transform: capitalize;
   transition: 0.5s;
   color: var(--dark);
-  font-size: 24px;
+  font-size: 24px !important;
+  padding: 15px 30px !important;
+  border: 0 !important;
 }
 
-/** hero **/
+.btn:hover {
+  background: #fff !important;
+  color: var(--primary) !important;
+}
+
+/* Section Menu */
+.navbar-nav .nav-item .nav-link {
+  padding: 5px 10px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  color: var(--primary);
+}
+
+.navbar-brand {
+  margin: 0 20px;
+}
+
+.section_menu {
+  padding: 150px 0;
+}
+
+.section_menu h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+}
+
+.section_menu .card .card-body p:last-child {
+  color: var(--primary);
+}
+
+/** Section Hero **/
 .hero_header {
   background-image: url(../img/bg-hero.png);
   background-position: center center;
@@ -89,19 +126,12 @@ p {
   z-index: -1;
 }
 
-/* Section Menu */
-.section_menu {
-  padding: 150px 0;
-}
-
-.section_menu h2 {
-  font-size: 50px;
-  margin-bottom: 80px;
-}
-
 /* Section About */
 .section_about {
   padding: 120px 0;
+}
+.section_about img {
+  width: -webkit-fill-available;
 }
 
 /* Section Quality */
@@ -166,6 +196,23 @@ p {
   width: -webkit-fill-available;
 }
 
+.hover-zoomin a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-zoomin img {
+  width: 100%;
+  height: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.hover-zoomin:hover img {
+  transform: scale(1.2);
+  opacity: 0.75;
+}
+
 /* Section Enjoy Food */
 .section_enjoy_food {
   padding: 200px 0;
@@ -175,12 +222,24 @@ p {
   background-size: cover;
 }
 
+.section_enjoy_food .card {
+  max-width: 735px;
+  margin: auto;
+  background: transparent;
+  padding: 60px;
+  border: 10px solid var(--primary);
+  border-radius: 0;
+}
+
 /* Section Contact */
 .section_contact {
   padding-bottom: 200px;
 }
 
 .icon_contact {
+  margin: 0 5px;
+  font-size: 24px;
+  padding: 5px 12px;
   width: 50px;
   height: 50px;
   background: var(--primary);
@@ -194,10 +253,19 @@ p {
   padding: 100px 0;
 }
 
-.section_feed img {
+.image-fluid {
+  position: absolute;
   top: -25%;
   left: -2%;
-  height: 640px;
+  height: fit-content;
+  width: inherit;
+  animation: imgRotate 50s linear infinite;
+}
+
+@keyframes imgRotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .section_feed p {
@@ -206,7 +274,7 @@ p {
 
 /* Footer */
 .footer_section {
-  padding: 75px 100px;
+  padding: 75px 0;
   background-color: #313238;
   text-align: center;
 }
@@ -221,7 +289,7 @@ ul.menu_footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 35px;
   margin-bottom: 30px;
   padding: 0;
 }
@@ -252,7 +320,7 @@ ul.menu_footer li {
   padding: 0 8px;
 }
 
-/**/
+/* Responsive */
 @media (min-width: 992px) {
   .navbar-dark {
     position: absolute;
@@ -261,16 +329,93 @@ ul.menu_footer li {
     left: 0;
     z-index: 999;
     background: transparent !important;
+    padding: 25px 0;
   }
 }
 
-/**/
+@media only screen and (max-width: 1300px) {
+  .section_quality:after,
+  .section_quality:before {
+    display: none;
+  }
+}
 
-.section_enjoy_food .card {
-  max-width: 735px;
-  margin: auto;
-  background: transparent;
-  padding: 60px;
-  border: 10px solid;
-  border-radius: 0;
+@media only screen and (min-width: 1140px) {
+  .navbar-brand {
+    margin: 0 175px;
+  }
+}
+
+@media only screen and (max-width: 1139px) {
+  .image-fluid {
+    position: relative;
+    width: 100%;
+  }
+
+  .section_quality .block_text {
+    position: relative;
+    margin-left: 0;
+  }
+
+  .section_quality {
+    padding: 100px 0;
+  }
+
+  .section_quality .block_image img {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .navbar-nav .nav-item .nav-link {
+    padding: 5px 20px;
+  }
+  .hero_header .container {
+    padding-top: 175px;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+  ul.menu_footer {
+    gap: 15px;
+  }
+  ul.menu_footer li {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-logo img {
+    width: 250px;
+  }
+
+  ul.menu_footer {
+    flex-direction: column;
+    margin-bottom: 50px;
+    gap: 20px;
+    margin-bottom: 50px;
+  }
+
+  .section_enjoy_food .card {
+    padding: 20px;
+  }
+
+  .section_contact {
+    padding-bottom: 100px;
+  }
+
+  .section_menu,
+  .section_enjoy_food,
+  .section_gallery,
+  .section_about {
+    padding: 100px 0;
+  }
+}
+
+@media only screen and (min-width: 540px) {
 }
